@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  database:
+    image: mvertes/alpine-mongo
+    networks:
+      storage-network:
+        ipv4_address: 15.5.0.6
+  web-worker:
+    build: ./
+    ports:
+      - "5002:5002"
+    networks:
+      - storage-network
+    environment:
+      - HTTP_PORT=5002
+    volumes:
+      - ./:/application
+networks:
+  storage-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 15.5.0.1/16

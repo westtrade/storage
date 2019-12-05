@@ -1,0 +1,80 @@
+details {
+	border: 0.1rem solid #e1e1e1;
+	border-radius: 4px;
+	padding: 0.5em 0.5em 0;
+}
+
+summary {
+	font-weight: bold;
+	margin: -0.5em -0.5em 0;
+	padding: 0.5em;
+	user-select: none;
+	cursor: pointer;
+	outline: 0;
+	box-shadow: 0;
+	background-color: #f4f5f6;
+}
+
+details form {
+	margin-bottom: 0;
+}
+
+details[open] {
+	padding: 0.5em;
+}
+
+details[open] summary {
+	border-bottom: 0.1rem solid #d1d1d1;
+	margin-bottom: 0.5em;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+textarea,
+select {
+	box-sizing: border-box;
+}
+
+/* Custom color */
+.button-black {
+	background-color: black;
+	border-color: black;
+}
+.button-black.button-clear,
+.button-black.button-outline {
+	background-color: transparent;
+	color: black;
+}
+.button-black.button-clear {
+	border-color: transparent;
+}
+
+/* Custom size */
+.button-small {
+	font-size: 0.8rem;
+	height: 2.8rem;
+	line-height: 2.8rem;
+	padding: 0 1.5rem;
+}
+
+.button-large {
+	font-size: 1.4rem;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	padding: 0 2rem;
+}
+
+tbody td {
+	height: 64px;
+	line-height: 39px;
+}
+
+.swal2-confirm.button {
+	margin-right: 5px !important;
+	margin-left: 5px !important;
+}

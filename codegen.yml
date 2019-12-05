@@ -1,0 +1,5 @@
+schema: src/server/graphql/schema.gql
+generates:
+  src/server/graphql/types.ts:
+    - typescript
+    - typescript-resolvers

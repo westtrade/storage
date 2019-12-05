@@ -1,0 +1,92 @@
+type Query {
+	me: User!
+	storages(pager: PagerInput): Storages!
+	products(pager: PagerInput): Products!
+}
+
+type Mutation {
+	signIn(credentials: CredentialsInput!): User!
+	signUp(credentials: CredentialsInput!): User!
+
+	createStorage(storage: StorageInput!): Storage!
+	editStorage(id: ID!, storage: StorageInput!): Storage!
+	deleteStorage(id: ID!): Boolean!
+
+	createProduct(product: ProductInput!): Product!
+	editProduct(id: ID!, product: ProductInput!): Product!
+	deleteProduct(id: ID!): Boolean
+	moveProducts(transfer: TransferOperationInput!): [Storage]!
+}
+
+input TransferOperationInput {
+	from: ID!
+	to: ID
+	product: ID!
+	quantity: Int!
+}
+
+input CredentialsInput {
+	login: String!
+	password: String!
+}
+
+input ProductInput {
+	id: String
+	name: String!
+	quantity: Int
+	total: Int
+}
+
+input StorageInput {
+	name: String!
+	products: [ProductInput!]
+}
+
+input PagerInput {
+	offset: Int
+	limit: Int
+}
+
+type User {
+	id: ID!
+	token: String
+	login: String!
+}
+
+type Product {
+	id: ID!
+	storages: [ProductStorage]!
+	name: String!
+	quantity: Int
+	total: Int!
+	used: Int!
+	owner: User!
+}
+
+type ProductStorage {
+	storage: Storage!
+	quantity: Int!
+}
+
+type Products {
+	list: [Product]!
+	pageInfo: PageInfo!
+}
+
+type Storages {
+	list: [Storage]!
+	pageInfo: PageInfo!
+}
+
+type Storage {
+	id: ID!
+	name: String!
+	products: Products!
+	owner: User!
+}
+
+type PageInfo {
+	limit: Int!
+	total: Int!
+	offset: Int!
+}
