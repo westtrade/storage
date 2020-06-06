@@ -14,7 +14,7 @@
 		"@types/styled-components": "^4.4.0",
 		"@types/webpack": "^4.41.0",
 		"@types/webpack-dev-server": "^3.9.0",
-		"apollo-server-express": "^2.9.12",
+		"apollo-server-express": "^2.14.2",
 		"bcryptjs": "^2.4.3",
 		"classnames": "^2.2.6",
 		"css-loader": "^3.2.0",
